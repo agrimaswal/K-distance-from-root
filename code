@@ -1,0 +1,25 @@
+class Tree
+{
+    void dfs(Node root,int k,int depth,ArrayList<Integer> result){
+        if(root==null){
+            return;
+        }
+
+        if(depth==k){
+            result.add(root.data);
+        }
+
+        dfs(root.left,k,depth+1,result);
+        dfs(root.right,k,depth+1,result);
+    }
+     // Recursive function to print right view of a binary tree.
+     ArrayList<Integer> Kdistance(Node root, int k)
+     {
+          // Your code here
+          ArrayList<Integer> result=new ArrayList<>();
+
+          dfs(root,k,0,result);
+          return result;
+
+     }
+}
